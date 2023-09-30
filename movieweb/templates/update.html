@@ -1,0 +1,33 @@
+  {% extends 'base.html' %}
+{% block body %}
+
+<div class="testbox"  style="width:70%; margin:auto;">
+
+<form enctype="multipart/form-data" method="post" style="background-color:#5fc3ff;">
+    {% csrf_token %}
+   <h4>Edit Movie</h4>
+        <div class="item">
+          <label for="name">Movie Name<span>*</span></label>
+          <input id="name" type="text" name="mname" value="{{mvid.mname}}" required/>
+        </div>
+        <div class="item">
+          <label for="email">Year<span>*</span></label>
+          <input id="email" type="number" name="year" value="{{mvid.year}}" required/>
+        </div>
+        <div class="item">
+          <label for="address">Banner<span>*</span></label>
+          <input id="address" type="file" name="img"  required/>
+        </div>
+        <div class="item">
+          <label for="city">Description<span>*</span></label>
+          <textarea name="desc" placeholder="{{mvid.desc}}"></textarea>
+        </div>
+
+
+        <div class="btn-block">
+          <button type="submit" href="/">SUBMIT</button>
+        </div>
+      </form>
+        </div>
+
+  {% endblock%}

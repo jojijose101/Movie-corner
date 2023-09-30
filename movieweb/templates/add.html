@@ -1,0 +1,31 @@
+  {% extends 'base.html' %}
+{% block body %}
+
+<div class="testbox"  style="width:70%; margin:auto;">
+      <form action="{% url 'movieapp:add'%}" method="post" enctype="multipart/form-data" style="background-color:#4200602b;">
+{% csrf_token %}
+        <h4>Add your movie</h4>
+        <div class="item">
+          <label for="name">Movie Name<span>*</span></label>
+          <input id="name" type="text" name="mname" required/>
+        </div>
+        <div class="item">
+          <label for="email">Year<span>*</span></label>
+          <input id="email" type="number" name="year" required/>
+        </div>
+        <div class="item">
+          <label for="address">Banner<span>*</span></label>
+          <input id="address" type="file" name="img" required/>
+        </div>
+        <div class="item">
+          <label for="city">Description<span>*</span></label>
+          <textarea name="desc"></textarea>
+        </div>
+
+
+        <div class="btn-block">
+          <button type="submit" href="/">SUBMIT</button>
+        </div>
+      </form>
+    </div>
+  {% endblock%}
